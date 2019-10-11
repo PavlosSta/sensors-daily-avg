@@ -10,14 +10,8 @@ with open(sys.argv[1], mode='r') as csv_file:
     for row in reader:
         datetime = row[0]
         datetimeT = datetime.split()
-        check = False
-        for x in datetimeT:
-            if (check):
-                date = x
-                check = False
-            else:
-                time = x
-                check = True
+        time = datetimeT[0]
+        date = datetimeT[1]
         temp = float(row[1])
         humid = float(row[2])
         if (line_count == 0):
